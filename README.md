@@ -26,44 +26,39 @@ Instructions on how it's done may be found [here](https://www.virtualbox.org/man
 ````
 packer build template.json
 ````
-3. After the building procedures are finished you will have your vagrant box (ubuntu-1604.box>)
-   * You could up 
-
-4. You could upload the box created by you during the packer phase to the [VagrantCloud](https://app.vagrantup.com/boxes/search) 
+3. You could upload the box created by you during the packer phase to the [VagrantCloud](https://app.vagrantup.com/boxes/search) 
 
 ## Vagrant phase
 
-1. Download and install vagrant from [here](https://www.vagrantup.com/downloads.html) 
-2. In order to begin working, you will need a Vagrantfile - the file that configures your Vagrant box. 
+1. Download and install vagrant from [here](https://www.vagrantup.com/downloads.html)
+
+2. You could add your box to Vagrant, run the following command: 
+
+````
+vagrant box add --name mybasebox mybasebox.box
+````
+3. In order to begin working, you will need a Vagrantfile - the file that configures your Vagrant box. 
    * You could create the minimal Vagrantfile required by executing the following command:
   ````
-  vagrant init -m 
+  vagrant init -m boxname
+  
+  # or download a box from the VagrantCloud:
+  
+  vagrant init -m username/boxname  
+
   `````
    * After running the previous command, you will have a file, with the following contents: 
     
   ````
   Vagrant.configure("2") do |config|
-  config.vm.box = "base"
+  config.vm.box = "boxname"
 end
   ````
-3  You could copy your box in the vagrant boxes directory which is located: 
-   ````
-   * Under MacOS & Linux:  ~/.vagrant.d/boxes
-   * Under Microsoft Windows: C:/Users/USERNAME/.vagrant.d/boxes
-   ````
-4. Edit the Vagrantfile to tell which box you want to start:
-  ````
-  # Edit the following line:
-  
-  config.vm.box = "<YourBoxName>" #If you had the box copied to the vagrant boxes directory
-  
-  config.vm.box = "<yourRepositoryName>/<yourBoxName>" #If you had your box uploaded to the VagrantCloud
-  ````
-5. Start your box by typing:
+4 Start your box by typing:
   ````
   vagrant up
   ````
-6. You could check if your box is up and running by typing:
+5. You could check if your box is up and running by typing:
   ````
   vagrant status
   ````
