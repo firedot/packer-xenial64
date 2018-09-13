@@ -3,6 +3,10 @@ firedot-xenial64
 
 **This repository is based on [that](https://github.com/nabels-coolblue/packer-xenial64) repository.**
 
+Here you could find instructuions how to create a basic Vagrant box with Packer. 
+
+You could learn more about Vagrant [here](https://www.vagrantup.com/intro/index.html)
+
 ## Used technologies
 
 **Packer** 
