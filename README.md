@@ -5,6 +5,8 @@ firedot-xenial64
 
 Here you could find instructuions how to create a basic Vagrant box with Packer. 
 
+You could learn more about Vagrant [here](https://www.vagrantup.com/intro/index.html)
+
 ## Used technologies
 
 **Packer** 
