@@ -1,6 +1,6 @@
 {
   "variables": {
-    "name": "firedot/ubuntu1604",
+    "name": "firedot/xenial64",
     "build_name": "xenial64",
     "build_cpu_cores": "2",
     "build_memory": "1024",
